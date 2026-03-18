@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: boardgame-platform-server
+  jackson:
+    serialization:
+      write-dates-as-timestamps: false
+
+server:
+  port: 8080
+
+boardgame:
+  ops-token: dev-ops-token

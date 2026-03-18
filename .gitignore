@@ -1,0 +1,11 @@
+.m2/
+.downloads/
+.gradle-home/
+.tools/
+android-sdk/
+server/target/
+android-app/build/
+android-app/app/build/
+android-app/.gradle/
+android-app/local.properties
+*.log

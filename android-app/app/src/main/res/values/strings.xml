@@ -1,0 +1,71 @@
+<resources>
+    <string name="app_name">Boardgame Platform MVP</string>
+    <string name="dismiss">Dismiss</string>
+    <string name="connection_connected">Realtime: connected</string>
+    <string name="connection_connecting">Realtime: connecting</string>
+    <string name="connection_failed">Realtime: reconnecting after failure</string>
+    <string name="connection_disconnected">Realtime: disconnected</string>
+
+    <string name="guest_default_name">Guest Player</string>
+    <string name="login_card_title">Guest login</string>
+    <string name="guest_name_label">Display name</string>
+    <string name="login_guest">Sign in as guest</string>
+    <string name="current_user_value">Current user: %1$s</string>
+    <string name="uid_value">User ID: %1$s</string>
+
+    <string name="party_title">Party</string>
+    <string name="create_party">Create party</string>
+    <string name="party_id_value">Party ID: %1$s</string>
+    <string name="party_members_value">Members: %1$s</string>
+    <string name="invite_user_label">Invite user ID</string>
+    <string name="send_invite">Send invite</string>
+    <string name="no_party_hint">Create a party before inviting teammates.</string>
+
+    <string name="create_room_title">Create room</string>
+    <string name="room_size_value">%1$d players</string>
+    <string name="room_size_selected">Selected room size: %1$d</string>
+    <string name="create_room">Create room</string>
+
+    <string name="room_title">Room</string>
+    <string name="room_unavailable">No room is available to display right now. Create or join one from the lobby.</string>
+    <string name="room_id_value">Room ID: %1$s</string>
+    <string name="room_status_value">Status: %1$s</string>
+    <string name="room_game_type_value">Game: %1$s</string>
+    <string name="host_value">Host: %1$s</string>
+    <string name="room_players_value">Players: %1$d / %2$d</string>
+    <string name="start_game">Start game</string>
+    <string name="waiting_host">Waiting for the host to start the game.</string>
+    <string name="player_list_title">Players</string>
+
+    <string name="match_title">Azul Match</string>
+    <string name="match_loading">Syncing the latest board state...</string>
+    <string name="match_unavailable">Match data is unavailable. Return to the lobby and try again.</string>
+    <string name="round_value">Round %1$d</string>
+    <string name="current_turn_value">Current turn: %1$s</string>
+    <string name="countdown_unknown">Time left: --</string>
+    <string name="countdown_value">Time left: %1$ds</string>
+    <string name="factories_title">Factories</string>
+    <string name="factory_title">Factory %1$d</string>
+    <string name="factory_empty">Empty</string>
+    <string name="center_title">Center</string>
+    <string name="bag_discard_value">Bag: %1$d | Discard: %2$d</string>
+    <string name="marker_available">First player marker is still in the center.</string>
+    <string name="center_empty">No tiles available in the center.</string>
+    <string name="return_to_my_board">Return to my board</string>
+    <string name="selected_source_hint">Selected %1$s. Tap a pattern line or the floor.</string>
+    <string name="my_board_subtitle">My board | %1$d pts</string>
+    <string name="opponent_board_subtitle">Opponent board | %1$d pts</string>
+    <string name="pattern_line_title">Pattern line %1$d</string>
+    <string name="floor_line_title">Floor line</string>
+    <string name="first_player_marker_held">Has the first player marker</string>
+
+    <string name="result_title">Match result</string>
+    <string name="result_loading">Loading the result and final board...</string>
+    <string name="finish_time_value">Finished at: %1$s</string>
+    <string name="summary_value">Summary: %1$s</string>
+    <string name="result_ranking_title">Rankings</string>
+    <string name="result_row_value">#%1$d %2$s | %3$d pts | %4$d rows</string>
+    <string name="result_board_tab">%1$d. %2$s</string>
+    <string name="result_board_subtitle">Place %1$d | %2$d pts | %3$d rows</string>
+    <string name="return_lobby">Return to lobby</string>
+</resources>
