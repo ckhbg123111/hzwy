@@ -8,4 +8,5 @@ android-app/build/
 android-app/app/build/
 android-app/.gradle/
 android-app/local.properties
+.env
 *.log

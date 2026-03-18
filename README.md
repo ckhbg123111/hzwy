@@ -14,6 +14,37 @@ mvn -pl server spring-boot:run
 
 The prototype server uses in-memory state, listens on `http://localhost:8080`, and exposes a raw WebSocket endpoint at `ws://localhost:8080/ws/realtime?token=...`.
 
+## Run the server with Docker
+
+The backend can now be built and deployed with Docker by running the root `deploy.sh` script:
+
+```bash
+cp example.env .env
+chmod +x deploy.sh
+./deploy.sh
+```
+
+The script automatically loads variables from the root `.env` file, builds the image from `server/Dockerfile`, removes any existing backend container with the same name, and starts a fresh container in the background.
+
+Common environment variables:
+
+- `IMAGE_NAME`: Docker image name. Default: `boardgame-platform-server`
+- `CONTAINER_NAME`: Docker container name. Default: `boardgame-platform-server`
+- `HOST_PORT`: host port exposed by Docker. Default: `8080`
+- `BOARDGAME_OPS_TOKEN`: overrides the default ops token from `application.yml`
+- `SPRING_PROFILES_ACTIVE`: optional Spring profile
+- `JAVA_OPTS`: optional JVM flags, such as `-Xms256m -Xmx512m`
+
+Example:
+
+```bash
+cp example.env .env
+# edit .env as needed
+./deploy.sh
+```
+
+On Windows, run the script from Git Bash or WSL.
+
 ## Current prototype tradeoffs
 
 - The server keeps business state in memory instead of MySQL and Redis so the MVP loop can run locally without infrastructure.
