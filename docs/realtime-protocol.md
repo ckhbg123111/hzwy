@@ -3,7 +3,7 @@
 The prototype server exposes a raw WebSocket endpoint:
 
 ```text
-ws://localhost:8080/ws/realtime?token=<auth-token>
+ws://localhost:8079/ws/realtime?token=<auth-token>
 ```
 
 ## Client Messages

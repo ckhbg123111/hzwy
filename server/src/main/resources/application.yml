@@ -6,7 +6,7 @@ spring:
       write-dates-as-timestamps: false
 
 server:
-  port: 8080
+  port: 8079
 
 boardgame:
   ops-token: dev-ops-token

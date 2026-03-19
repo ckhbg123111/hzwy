@@ -48,8 +48,8 @@ DOCKERFILE_PATH="${DOCKERFILE_PATH:-$SCRIPT_DIR/server/Dockerfile}"
 BUILD_CONTEXT="${BUILD_CONTEXT:-$SCRIPT_DIR/server}"
 IMAGE_NAME="${IMAGE_NAME:-boardgame-platform-server}"
 CONTAINER_NAME="${CONTAINER_NAME:-boardgame-platform-server}"
-HOST_PORT="${HOST_PORT:-8080}"
-CONTAINER_PORT="${CONTAINER_PORT:-8080}"
+HOST_PORT="${HOST_PORT:-8079}"
+CONTAINER_PORT="${CONTAINER_PORT:-8079}"
 RESTART_POLICY="${RESTART_POLICY:-unless-stopped}"
 
 if ! command -v docker >/dev/null 2>&1; then

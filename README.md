@@ -12,7 +12,7 @@ This repository contains a prototype implementation of the Android board game pl
 mvn -pl server spring-boot:run
 ```
 
-The prototype server uses in-memory state, listens on `http://localhost:8080`, and exposes a raw WebSocket endpoint at `ws://localhost:8080/ws/realtime?token=...`.
+The prototype server uses in-memory state, listens on `http://localhost:8079`, and exposes a raw WebSocket endpoint at `ws://localhost:8079/ws/realtime?token=...`.
 
 ## Run the server with Docker
 
@@ -30,7 +30,7 @@ Common environment variables:
 
 - `IMAGE_NAME`: Docker image name. Default: `boardgame-platform-server`
 - `CONTAINER_NAME`: Docker container name. Default: `boardgame-platform-server`
-- `HOST_PORT`: host port exposed by Docker. Default: `8080`
+- `HOST_PORT`: host port exposed by Docker. Default: `8079`
 - `BOARDGAME_OPS_TOKEN`: overrides the default ops token from `application.yml`
 - `SPRING_PROFILES_ACTIVE`: optional Spring profile
 - `JAVA_OPTS`: optional JVM flags, such as `-Xms256m -Xmx512m`
