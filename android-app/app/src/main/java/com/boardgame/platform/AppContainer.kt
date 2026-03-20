@@ -13,10 +13,16 @@ object AppContainer {
     }
 
     val repository: PlatformRepository by lazy {
-        PlatformRepository(json = json)
+        PlatformRepository(
+            baseUrl = BuildConfig.BASE_URL,
+            json = json,
+        )
     }
 
     val realtimeClient: RealtimeClient by lazy {
-        RealtimeClient(json = json)
+        RealtimeClient(
+            baseWsUrl = BuildConfig.BASE_WS_URL,
+            json = json,
+        )
     }
 }

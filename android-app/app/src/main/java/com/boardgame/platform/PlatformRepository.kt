@@ -29,7 +29,7 @@ import okhttp3.WebSocket
 import okhttp3.WebSocketListener
 
 class PlatformRepository(
-    private val baseUrl: String = "http://10.0.2.2:8079",
+    private val baseUrl: String = BuildConfig.BASE_URL,
     val json: Json,
 ) {
     private val client = OkHttpClient()
@@ -95,7 +95,7 @@ class PlatformRepository(
 }
 
 class RealtimeClient(
-    private val baseWsUrl: String = "ws://10.0.2.2:8079/ws/realtime",
+    private val baseWsUrl: String = BuildConfig.BASE_WS_URL,
     private val json: Json,
 ) {
     private val client = OkHttpClient()
