@@ -7,12 +7,16 @@ import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 import org.springframework.web.socket.TextMessage;
 import org.springframework.web.socket.WebSocketSession;
 
 @Component
 class WebSocketRealtimeGateway implements RealtimeGateway {
+
+    private static final Logger logger = LoggerFactory.getLogger(WebSocketRealtimeGateway.class);
 
     private final ObjectMapper objectMapper;
     private final Map<String, Set<WebSocketSession>> sessionsByUserId = new ConcurrentHashMap<>();
@@ -107,6 +111,13 @@ class WebSocketRealtimeGateway implements RealtimeGateway {
                 session.sendMessage(new TextMessage(objectMapper.writeValueAsString(envelope)));
             }
         } catch (IOException exception) {
+            logger.warn(
+                    "realtime send failed sessionId={} userId={} type={} message={}",
+                    session.getId(),
+                    userIdBySessionId.getOrDefault(session.getId(), "unknown"),
+                    type,
+                    exception.getMessage(),
+                    exception);
             unregister(session);
         }
     }

@@ -4,16 +4,6 @@ plugins {
     alias(libs.plugins.kotlin.serialization)
 }
 
-fun String.asBuildConfigLiteral(): String =
-    "\"" + replace("\\", "\\\\").replace("\"", "\\\"") + "\""
-
-val apiBaseUrl = providers.gradleProperty("BOARDGAME_BASE_URL")
-    .orElse("http://47.120.60.86:8079")
-    .get()
-val realtimeBaseUrl = providers.gradleProperty("BOARDGAME_WS_URL")
-    .orElse("ws://47.120.60.86:8079/ws/realtime")
-    .get()
-
 android {
     namespace = "com.boardgame.platform"
     compileSdk = 35
@@ -29,8 +19,6 @@ android {
         vectorDrawables {
             useSupportLibrary = true
         }
-        buildConfigField("String", "BASE_URL", apiBaseUrl.asBuildConfigLiteral())
-        buildConfigField("String", "BASE_WS_URL", realtimeBaseUrl.asBuildConfigLiteral())
     }
 
     buildTypes {
@@ -54,7 +42,6 @@ android {
 
     buildFeatures {
         compose = true
-        buildConfig = true
     }
 
     composeOptions {

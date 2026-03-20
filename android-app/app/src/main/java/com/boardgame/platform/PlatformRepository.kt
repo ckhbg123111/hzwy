@@ -1,6 +1,7 @@
 package com.boardgame.platform
 
 import java.io.IOException
+import java.net.Proxy
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
@@ -29,10 +30,12 @@ import okhttp3.WebSocket
 import okhttp3.WebSocketListener
 
 class PlatformRepository(
-    private val baseUrl: String = BuildConfig.BASE_URL,
+    private val baseUrl: String = "http://47.120.60.86:8079",
     val json: Json,
 ) {
-    private val client = OkHttpClient()
+    private val client = OkHttpClient.Builder()
+        .proxy(Proxy.NO_PROXY)
+        .build()
     private val jsonMediaType = "application/json; charset=utf-8".toMediaType()
 
     suspend fun guestLogin(deviceId: String, displayName: String): AuthSessionResponse =
@@ -95,10 +98,12 @@ class PlatformRepository(
 }
 
 class RealtimeClient(
-    private val baseWsUrl: String = BuildConfig.BASE_WS_URL,
+    private val baseWsUrl: String = "ws://47.120.60.86:8079/ws/realtime",
     private val json: Json,
 ) {
-    private val client = OkHttpClient()
+    private val client = OkHttpClient.Builder()
+        .proxy(Proxy.NO_PROXY)
+        .build()
     private val scope = CoroutineScope(SupervisorJob() + Dispatchers.IO)
     private val _events = MutableSharedFlow<ServerRealtimeMessage>(extraBufferCapacity = 64)
     private val _connectionStatus = MutableStateFlow(RealtimeConnectionStatus.DISCONNECTED)
